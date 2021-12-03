@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD Project</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    
+    <div class="container py-5">
+        <h1 class="text-align-center" >Basic CRUD Project</h1>
+
+        <div class="form-group">
+            <label for="ProductName">productName:</label>
+            <input type="text" class="form-control" id="ProductName">
+            <div id="productNameAlert" class="d-none alert alert-danger">
+                <p>product Name must be five upper case letters.</p>
+            </div>
+        </div>
+        <div class="form-group py-2">
+            <label for="ProductPrice">productPrice:</label>
+            <input type="number" class="form-control" id="ProductPrice">
+        </div>
+        <div class="form-group">
+            <label for="ProductCategory">productCategory:</label>
+            <input type="text" class="form-control" id="ProductCategory">
+        </div>
+        <div class="form-group py-2">
+            <label for="ProductDescription">productDescription:</label>
+            <textarea type="number" class="form-control" id="ProductDescription"></textarea>
+        </div>
+
+        <button onclick="addProduct();" class="btn btn-outline-info" id="mainBtn" >Add Product</button>
+        
+    </div>
+    
+    <div class="container">
+
+        <input onkeyup="search(this.value);" class="form-control w-75 m-auto " type="text" placeholder="Search Here.." id="search">
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>productName</th>
+                    <th>productPrice</th>
+                    <th>productCategory</th>
+                    <th>ProductDescription</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody id="display">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/actions.js" ></script>
+</body>
+
+</html>
